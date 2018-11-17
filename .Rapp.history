@@ -1,0 +1,8 @@
+getwd()
+setwd("/Users/ruisantos/Git/datasciencecoursera")
+getwd()
+ls()
+dir()
+ls()
+source("mycode.R")
+ls()
