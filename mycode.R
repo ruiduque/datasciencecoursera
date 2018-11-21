@@ -1,8 +1,26 @@
-myfunction <- function() {
-    x <- rnorm(100)
-    mean(x)
+test <- function(x) {
+  
+  for (i in seq_along(x)) {
+    print(x[i])
+  }
+  
 }
 
-second <- function(x) {
-  x + rnorm(length(x))
+test1 <- function(x) {
+  
+  for (i in 1:4) print(x[i])
+    
+  
+}
+
+test2 <- function(x) {
+  
+  for (j in seq_len(ncol(x))) {
+    for (i in seq_len(nrow(x))) {
+      print(x[i,j])
+    }
+    
+  }
+  
+  
 }
