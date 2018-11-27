@@ -1,4 +1,3 @@
-
 pollutantmean <- function(directory, pollutant, id = 1:332){
   
   filelist <- list.files(directory, full.names = TRUE)
@@ -14,5 +13,15 @@ pollutantmean <- function(directory, pollutant, id = 1:332){
   
   # Calculare mean
   mean(unlist(my_vector), na.rm = TRUE)
+  
+}
+
+#
+# Using lapply
+#
+pollutantmean1 <- function(directory, pollutant, id = 1:332){
+  
+  # Calculare mean
+  mean(unlist(sapply(list.files(directory, full.names = TRUE)[id], function(x) read.csv(file = x)[pollutant])), na.rm = TRUE)
   
 }

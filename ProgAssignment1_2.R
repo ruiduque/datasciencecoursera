@@ -15,3 +15,15 @@ complete <- function(directory, id = 1:32) {
   colnames(my_output) <- c("id", "nobs")
   my_output
 } 
+
+# --
+# -- Trying with lapply
+#--
+complete1 <- function(directory, id = 1:32) {
+  
+  data.frame(id = id, nobs = sapply(list.files(directory, full.names = TRUE)[id], 
+                                    function (filen) {
+                                      sum(complete.cases(read.csv(file = filen)))
+                                    }), row.names = NULL)
+
+} 
